@@ -1,12 +1,14 @@
 import { FC } from 'react';
 
-import { SearchIcon, ShoppingBagIcon } from '@heroicons/react/outline';
+import { SearchIcon, ShoppingBagIcon, UserIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export const Header: FC = () => {
+  const session = false;
+
   return (
-    <header className="sticky top-0 z-30 flex w-full items-center justify-between bg-[#E7ECEE] p-4">
+    <header className="sticky top-0 z-30 flex w-full items-center  justify-between  bg-[#E7ECEE] p-4">
       <div className="flex items-center justify-center md:w-1/5">
         <Link href="/">
           <div className="relative h-10 w-5 cursor-pointer opacity-75 transition hover:opacity-100">
@@ -33,14 +35,26 @@ export const Header: FC = () => {
         <Link href="/">
           <div className="relative cursor-pointer">
             <span
-              className="absolute -right-1 -top-1 z-50 flex h-4 w-4 items-center 
-          justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-500"
+              className="absolute -right-1 -top-1 z-50 flex h-4 w-4
+          items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-500
+          text-[10px] text-white"
             >
               2
             </span>
             <ShoppingBagIcon className="headerIcon" />
           </div>
         </Link>
+
+        {session ? (
+          <Image
+            src="sss"
+            width={34}
+            height={34}
+            className="cursor-pointer rounded-full"
+          />
+        ) : (
+          <UserIcon className="headerIcon" onClick={() => {}} />
+        )}
       </div>
     </header>
   );
