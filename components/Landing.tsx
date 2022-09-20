@@ -25,7 +25,7 @@ export const Landing: FC = () => {
           <span className="block">Driven By Values </span>
         </h1>
 
-        <div>
+        <div className="space-x-8">
           <Button title="Buy Now" />
           <a href="/" className="link">
             Learn More

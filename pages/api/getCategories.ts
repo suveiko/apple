@@ -2,10 +2,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
-  name: string;
+  // eslint-disable-next-line no-undef
+  categories: Category[];
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>): void {
-  // eslint-disable-next-line no-magic-numbers
-  res.status(200).json({ name: 'Sasha' });
+  console.log(req, res);
+  // const categories = await sanityClient.fetch(query);
 }
